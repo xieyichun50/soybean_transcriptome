@@ -7,7 +7,7 @@ gff=${wd}/ref_genome/Phytozome/PhytozomeV13/Gmax/Wm82.a4.v1/annotation/Gmax_508_
 
 hisat2-build -p 76 -f ${refgenome} ${refgenome}
 
-cat samples_n_reads_described.txt | while read id1 id2 ;
+cat ${wd}/samples_n_reads_described.txt | while read id1 id2 ;
 do
 
 echo "fastp -i ${dir_fq}/${id2}/*_1.fq* -I ${dir_fq}/${id2}/*_2.fq* -o ${dir_fq}/${id2}.r1.fq -O ${dir_fq}/${id2}.r2.fq --cut_right -W 4 -M 20 -l 15 -j ${dir_fq}/${id2}.fastp.json -h ${dir_fq}/${id2}.fastp.html -R ${id2}.fastp_report -w 16"
