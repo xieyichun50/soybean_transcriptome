@@ -12,3 +12,8 @@ echo "stringtie -e -B -p 76 -G ${gff} -A ${dir_exp}/${id2}_gene_count.txt -o ${d
 stringtie -e -B -p 76 -G ${gff} -A ${dir_exp}/${id2}_gene_count.txt -o ${dir_exp}/ballgown/${id2}_ballgown/${id2}.gtf ${dir_bam}/$id2.sorted.bam
 
 done
+
+prepDE.py -i ${dir_exp}/ballgown -l 150 -g gene_count_matrix.csv -t transcript_count_matrix.csv
+sed 's/,/\t/g;s/_ballgown//g' gene_count_matrix.csv > gene_count_matrix.txt
+sed 's/,/\t/g;s/_ballgown//g' transcript_count_matrix.csv >　transcript_count_matrix.txt
+/usr/bin/Rscript /mnt/content_176/yichun/fungi/hourglass/scripts/edgeR_TMM_norm.R
