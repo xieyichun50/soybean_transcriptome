@@ -18,3 +18,5 @@ sed 's/,/\t/g;s/_ballgown//g' gene_count_matrix.csv > gene_count_matrix.txt
 sed 's/,/\t/g;s/_ballgown//g' transcript_count_matrix.csv >　transcript_count_matrix.txt
 /usr/bin/Rscript /mnt/content_176/yichun/fungi/hourglass/scripts/edgeR_TMM_norm.R
 /usr/bin/Rscript /mnt/content_176/yichun/scripts/illumina/ballgown2fpkm.R -i ${dir_exp}/ballgown -o gene_count_matrix.fpkm.txt
+/usr/bin/Rscript /mnt/content_176/yichun/scripts/illumina/create_sample_pair.R  -i samples_n_reads_described.txt 
+
