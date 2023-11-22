@@ -1,0 +1,8 @@
+dir_wd=
+dir_fq=${dir_wd}/fastq
+cat ${dir_wd}/samples_n_reads_described.txt | while read id1 id2 ;
+do
+echo "ascp -i /mnt/content_176/yichun/tools/aspera.openssh -QT -l100m -k1 -d ${dir_fq}/${id2}/ subasp@upload.ncbi.nlm.nih.gov:uploads/feixue1039_gmail.com_kTHmegpy/newdir/"
+ascp -i /mnt/content_176/yichun/tools/aspera.openssh -QT -l100m -k1 -d ${dir_fq}/${id2}/ subasp@upload.ncbi.nlm.nih.gov:uploads/feixue1039_gmail.com_kTHmegpy/newdir/
+
+done
